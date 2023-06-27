@@ -39,8 +39,10 @@ listint_t *create_listint(const int *array, size_t size)
 int main(void)
 {
     listint_t *list;
-    int array[] = {19, 48, 99, 71, 13, 52, 96, 73, 86, 7};
-    size_t n = sizeof(array) / sizeof(array[0]);
+
+    int *array;
+    size_t n = 101;
+    array = rand_array(n, 0);
     list = create_listint(array, n);
     if (!list)
         return (1);
@@ -48,9 +50,7 @@ int main(void)
     printf("\n");
     insertion_sort_list(&list);
     printf("\n");
-    print_list(list);
+    print_list(list);\
     check_list(list);
-
-
     return (0);
 }

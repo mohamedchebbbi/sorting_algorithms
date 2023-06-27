@@ -1,7 +1,9 @@
-#ifndef SORT_H
-#define SORT_H
+#ifndef _SORT_H
+#define _SORT_H
 
-#include <stddef.h>
+#include <stdlib.h>
+#include <stdio.h>
+#include <time.h>
 
 /**
  * struct listint_s - Doubly linked list node
@@ -12,12 +14,13 @@
  */
 typedef struct listint_s
 {
-	const int n;
+	int n;
 	struct listint_s *prev;
 	struct listint_s *next;
 } listint_t;
 
-/* functions prototypes */
+
+/* print.c */
 void print_array(const int *array, size_t size);
 void print_list(const listint_t *list);
 void check_list(const listint_t *list);
@@ -37,4 +40,4 @@ void heap_sort(int *array, size_t size);
 void bitonic_sort(int *array, size_t size);
 void quick_sort_hoare(int *array, size_t size);
 
-#endif /*SORT_H*/
+#endif

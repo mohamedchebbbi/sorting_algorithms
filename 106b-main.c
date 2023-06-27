@@ -1,5 +1,3 @@
-#include <stdio.h>
-#include <stdlib.h>
 #include "sort.h"
 
 /**
@@ -9,13 +7,13 @@
  */
 int main(void)
 {
-	int array[] = {19, 48, 99, 71, 13, 52, 96, 73, 86, 7};
-	size_t n = sizeof(array) / sizeof(array[0]);
-
+	size_t n = 32;
+	int *array = rand_array(n, 1000);
 	print_array(array, n);
 	printf("\n");
-	bubble_sort(array, n);
+	bitonic_sort(array, n);
 	printf("\n");
 	print_array(array, n);
+	check_array(array, n);
 	return (0);
 }

@@ -1,3 +1,5 @@
+#include <stdio.h>
+#include <stdlib.h>
 #include "sort.h"
 
 /**
@@ -7,14 +9,14 @@
  */
 int main(void)
 {
-    int array[] = {19, 1, 0};
-    size_t n = sizeof(array) / sizeof(array[0]);
+    size_t n = 101;
+    int *array = rand_array(n, 1000);
 
     print_array(array, n);
     printf("\n");
-    selection_sort(array, n);
+    quick_sort_hoare(array, n);
     printf("\n");
     print_array(array, n);
+    check_array(array, n);
     return (0);
 }
-
